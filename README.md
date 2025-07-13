@@ -1,4 +1,4 @@
-# Git Patch Export
+# Git Patch Export - VS Code Extension
 
 A VS Code extension that adds convenient patch export commands to the Git panel, allowing you to quickly create patches from your Git repository.
 
@@ -12,7 +12,15 @@ A VS Code extension that adds convenient patch export commands to the Git panel,
 
 ## Usage
 
-### Install the Extension
+### Install the Extension from the local directory
+
+1. Clone the repository
+2. Open VS Code
+3. Go to Extensions (Ctrl+Shift+P)
+4. Run the command "Developer: Install extension from location"
+5. Select the cloned repository
+
+### Install the Extension from the VS Code Marketplace
 
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X)
@@ -22,6 +30,9 @@ A VS Code extension that adds convenient patch export commands to the Git panel,
 ### Using the Extension
 
 Once installed, you'll find two new buttons in your Git panel:
+
+<img src="./images/button1.jpg" alt="Git Patch Export Buttons" width="400"/>
+<img src="./images/button2.jpg" alt="Git Patch Export Buttons" width="400"/>
 
 #### 1. Export Last Commit as Patch (📤)
 - Click the export button in the Git panel header

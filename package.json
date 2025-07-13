@@ -1,0 +1,73 @@
+{
+  "name": "git-patch-export",
+  "displayName": "Git Patch Export",
+  "description": "Adds patch export commands to Git panel with format-patch and staged diff functionality",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/git-patch-export"
+  },
+  "keywords": [
+    "git",
+    "patch",
+    "export",
+    "diff",
+    "format-patch",
+    "version control"
+  ],
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:git-patch-export.formatPatch",
+    "onCommand:git-patch-export.stagedDiff"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "git-patch-export.formatPatch",
+        "title": "Export Last Commit as Patch",
+        "icon": "$(export)"
+      },
+      {
+        "command": "git-patch-export.stagedDiff",
+        "title": "Export Staged Changes as Patch",
+        "icon": "$(diff)"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "git-patch-export.formatPatch",
+          "when": "scmProvider == git",
+          "group": "navigation@1"
+        },
+        {
+          "command": "git-patch-export.stagedDiff",
+          "when": "scmProvider == git",
+          "group": "navigation@2"
+        }
+      ],
+      "scm/resourceGroup/context": [
+        {
+          "command": "git-patch-export.formatPatch",
+          "when": "scmProvider == git && scmResourceGroup == index",
+          "group": "1_modification"
+        },
+        {
+          "command": "git-patch-export.stagedDiff",
+          "when": "scmProvider == git && scmResourceGroup == index",
+          "group": "1_modification"
+        }
+      ]
+    }
+  }
+}
